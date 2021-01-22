@@ -6,11 +6,20 @@ class UserListComponents extends Component {
         this.state={
             users:[]
         }
+        this.addUser = this.addUser.bind(this);
     }
+
+    addUser(){
+        this.props.history.push('/add-user');
+    }
+
     render() {
         return (
             <div>
-                <h2 className="text-center">User List</h2>
+                <h2 className="text-center">Phone List</h2>
+                <div className="row">
+                    <button className="btn btn-primary" onClick={this.addUser}>Add User</button>
+                </div>
                 <div className="row">
                     <table className="table table-striped table-bordered">
                         <thead>
