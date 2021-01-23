@@ -7,10 +7,15 @@ class UserListComponents extends Component {
             users:[]
         }
         this.addUser = this.addUser.bind(this);
+        this.editUser=this.editUser.bind(this);
     }
 
     addUser(){
         this.props.history.push('/add-user');
+    }
+
+    editUser(id){
+        this.props.history.push('/update-user/${id}')
     }
 
     render() {
@@ -46,6 +51,9 @@ class UserListComponents extends Component {
                                         <td>{user.userAlias}</td>
                                         <td>{user.primaryGroup}</td>
                                         <td>{user.secoundaryGroup}</td>
+                                        <td>
+                                            <button onClick={ () =>this.editUser(user.id)} className="btn btn-info">Update</button>
+                                        </td>
                                     </tr>
                                 )
                             }
