@@ -43,6 +43,9 @@ class UpdateUser extends Component {
             secondaryGroup:this.state.secondaryGroup
         };
         console.log('User=>'+JSON.stringify(user));
+        UserServices.updateUser(user,this.state.id).then(res => {
+            this.props.history.push('/users');
+        })
     
     }
 
